@@ -93,6 +93,3 @@ Technical-Resume-Expert/
 └── sample_resume.pdf
 ```
 
----
-
-Built with ❤️ using **Python**, **Streamlit**, and **Google Gemini AI**.
