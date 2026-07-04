@@ -11,6 +11,7 @@ import google.generativeai as genai
 
 # Load environment variables
 load_dotenv()
+print("API KEY =", os.getenv("GOOGLE_API_KEY"))
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Functions
@@ -88,39 +89,124 @@ def draw_pie_chart(match_percentage):
 
 # Streamlit Configuration
 st.set_page_config(page_title="Technical ATS Resume Expert")
+st.markdown("""
+<style>
 
-# Page Styling
-st.markdown(
-    """
-    <style>
-    body {
-        background-image: url('gradient-blur.png');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
-    h1 {
-        text-align: center;
-        color: white;
-        font-size: 2.5em;
-    }
-    </style>
-    """, unsafe_allow_html=True
-)
+.stApp{
+    background:#0E1117;
+}
+/* Space below uploader */
+div[data-testid="stFileUploader"]{
+    margin-bottom:25px;
+}
+/* Upload box */
+[data-testid="stFileUploaderDropzone"]{
+    border:2px dashed #6366F1;
+    border-radius:14px;
+    padding:22px;
+    transition:0.3s ease;
+}
 
-st.markdown("<h1 style='text-align: center; color: black;'>Technical Resume Expert</h1>", unsafe_allow_html=True)
+/* Hover */
+[data-testid="stFileUploaderDropzone"]:hover{
+    border-color:#4F46E5;
+    background:#1F2430;
+}
+textarea{
+    border-radius:12px !important;
+}
+
+.main-card{
+    max-width:850px;
+    margin:auto;
+    padding:40px;
+    background:#181A22;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+h1{
+    color:white;
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#9CA3AF;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+
+            div.stButton > button{
+    width:100%;
+    height:55px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+    background:#4F46E5;
+    color:white;
+    border:2px solid transparent;
+    transition:all .25s ease;
+}
+
+/* Hover */
+div.stButton > button:hover{
+    background:#3730A3;      /* darker blue */
+    color:white;
+    border:2px solid #1E3A8A;
+    transform:translateY(-2px);
+}
+
+/* Click */
+div.stButton > button:focus{
+    background:#3730A3;
+    color:white;
+    border:2px solid #1E3A8A;
+    box-shadow:none;
+}
+            
+</style>
+""", unsafe_allow_html=True)
+st.markdown("""
+<div class="main-card">
+
+<h1>Technical Resume Expert</h1>
+
+<p class="subtitle">
+Analyze your resume against a job description and get ATS insights powered by AI.
+</p>
+
+""", unsafe_allow_html=True)
 
 # Inputs
-input_text = st.text_area("Job Description: ", key="input")
-uploaded_file = st.file_uploader("Upload your resume (PDF)...", type=["pdf"])
+st.markdown(
+    "<h3 style='margin-bottom:2px; margin-top:28px;'>Job Description</h3>",
+    unsafe_allow_html=True
+)
+
+input_text = st.text_area(
+    "",
+    key="input",
+    height=180,
+    placeholder="Paste the complete job description here..."
+)
+st.markdown(
+    "<h3 style='margin-bottom:2px;margin-top:22px;'>Upload Resume</h3>",
+    unsafe_allow_html=True
+)
+
+uploaded_file = st.file_uploader("", type=["pdf"])
 
 if uploaded_file is not None:
-    st.write("PDF Uploaded Successfully!")
+    st.success("✅ Resume uploaded successfully!")
 
 # Buttons
 submit1 = st.button("Analyse Resume")
 submit2 = st.button("How Can I Improvise my Skills?")
 submit3 = st.button("Match Resume with Job Description")
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Prompts
 input_prompt1 = """
