@@ -1,10 +1,98 @@
-# Technical Resume Expert - Powered by Gemini-2.5-Flash
-A sleek and intelligent resume analyzer built with Gemini-2.5-Flash, designed with full compatibility for modern **ATS (Applicant Tracking Systems)** and **Content Management Systems (CMS)**. This project not only ensures aesthetic excellence but also focuses on boosting your resume’s impact through the following features:
+#  Technical Resume Expert - AI Powered ATS Resume Analyzer
 
-**Resume Matcher**: Intelligently compares resumes with job descriptions to highlight alignment and identify gaps.
+An intelligent **AI-powered Resume Analyzer** built with **Streamlit** and **Google Gemini 2.5 Flash** that helps job seekers optimize their resumes for modern **Applicant Tracking Systems (ATS)**.
 
-**Skill Enhancer**: Suggests key industry-specific skills to improve your resume’s visibility and relevance.
+The application compares your resume against a job description, analyzes strengths and weaknesses, suggests improvements, and provides an ATS compatibility score to maximize your chances of landing interviews.
 
-**Insightful Resume Analysis**: Delivers actionable feedback to optimize structure, keywords, and overall presentation.
+---
 
-Ideal for job seekers aiming to stand out in competitive tech domains.
+##  Features
+
+###  ATS Resume Analysis
+Get a detailed evaluation of your resume based on ATS-friendly standards, including:
+
+- Resume structure
+- Formatting
+- Content quality
+- Keyword optimization
+- Professional presentation
+
+---
+
+###  Resume Matcher
+
+Compare your resume with a job description and receive:
+
+- Match percentage
+- Missing keywords
+- Required skills not present
+- Alignment with the job role
+
+---
+
+###  Skill Enhancement
+
+Receive AI-generated recommendations for:
+
+- Technical skills
+- Industry-specific keywords
+- Tools and technologies
+- Certifications
+- Resume improvements
+
+---
+
+###  Detailed Feedback
+
+The application provides actionable insights including:
+
+- Resume strengths
+- Areas for improvement
+- Missing ATS keywords
+- Content suggestions
+- Overall resume quality
+
+---
+
+###  Visual Analytics
+
+View your resume score with clean visualizations powered by **Matplotlib** for an easy understanding of your performance.
+
+---
+
+##  Demo
+
+Upload your resume in PDF format, paste the job description, and let AI analyze everything in seconds.
+
+---
+
+##  Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| **Python** | Backend Logic |
+| **Streamlit** | Interactive Web Application |
+| **Google Gemini 2.5 Flash** | AI Resume Analysis |
+| **PyMuPDF** | PDF Text Extraction |
+| **Matplotlib** | Charts & Visualizations |
+| **python-dotenv** | Environment Variable Management |
+
+---
+
+##  Project Structure
+
+```text
+Technical-Resume-Expert/
+│
+├── app.py
+├── requirements.txt
+├── .env
+├── assets/
+│
+├── README.md
+└── sample_resume.pdf
+```
+
+---
+
+Built with ❤️ using **Python**, **Streamlit**, and **Google Gemini AI**.
